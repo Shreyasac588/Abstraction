@@ -1,0 +1,57 @@
+package com.jsp.abstract1;
+import java.util.Scanner;
+public abstract class Arrange {
+	public abstract void login();
+	public abstract void logout();
+}
+class Customer extends Arrange{
+	@Override
+	public void login() {
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the email");
+		String email=s.next();
+		System.out.println("enter the passward");
+		String passward=s.next();
+		System.out.println("login succesfully");
+	}
+	@Override
+	public void logout() {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Do you want to logout");
+		String logout=s.next();
+		if(logout.equals("yes")) {
+			System.out.println("logout succesfully");
+		}
+	}
+}
+class Employee extends Arrange{
+	@Override
+	public void login() {
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the employee id");
+		String email=s.next();
+		System.out.println("enter the passward");
+		String passward=s.next();
+		System.out.println("login succesfully");
+	}
+	@Override
+	public void logout() {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Do you want to logout");
+		String logout=s.next();
+		if(logout.equals("yes")) {
+			System.out.println("logout succesfully");
+		}
+	}
+	
+}
+class Main{
+	public static void main(String[] args) {
+		Employee e=new Employee();
+		Customer c=new Customer();
+		e.login();
+		e.logout();
+		c.login();
+		c.logout();
+	}
+}
